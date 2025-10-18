@@ -203,7 +203,7 @@ function QuizResults() {
               >
                 <div className="flex items-start gap-3 mb-3">
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
-                    item.isCorrect ? 'text-white' : 'text-white'
+                    item.isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
                   }`}>
                     {item.isCorrect ? '✓' : '✗'}
                   </div>
@@ -211,16 +211,25 @@ function QuizResults() {
                     <h4 className="font-semibold text-gray-900 mb-2">
                       Question {index + 1}
                     </h4>
+                    <p className="text-sm text-gray-800 mb-3 font-medium">
+                      {item.questionText}
+                    </p>
                     {item.userAnswer !== null && (
                       <p className="text-sm text-gray-700 mb-2">
                         <span className="font-medium">Your answer:</span>{' '}
-                        {item.userAnswer !== null ? `Option ${String.fromCharCode(65 + item.userAnswer)}` : 'No answer'}
+                        <span className={`px-2 py-1 rounded text-xs ${
+                          item.isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                        }`}>
+                          {item.options[item.userAnswer]}
+                        </span>
                       </p>
                     )}
                     {!item.isCorrect && (
                       <p className="text-sm text-gray-700 mb-2">
                         <span className="font-medium">Correct answer:</span>{' '}
-                        Option {String.fromCharCode(65 + item.correctAnswer)}
+                        <span className="px-2 py-1 rounded text-xs bg-green-100 text-green-800">
+                          {item.options[item.correctAnswer]}
+                        </span>
                       </p>
                     )}
                     <p className="text-sm text-gray-600 italic">

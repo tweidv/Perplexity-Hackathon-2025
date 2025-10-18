@@ -263,16 +263,16 @@ function QuizRunner() {
                   cx="48"
                   cy="48"
                   r="40"
-                  stroke={timeLeft <= 2 ? '#ef4444' : '#3b82f6'}
+                  stroke={`rgb(${255 - Math.round((timeLeft / TIME_LIMIT) * 255)}, 0, ${Math.round((timeLeft / TIME_LIMIT) * 255)})`}
                   strokeWidth="8"
                   fill="none"
                   strokeDasharray={`${2 * Math.PI * 40}`}
                   strokeDashoffset={`${2 * Math.PI * 40 * (1 - timeLeft / TIME_LIMIT)}`}
-                  className="transition-all duration-1000 ease-linear"
+                  className="transition-all duration-750 ease-linear"
                 />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-3xl font-bold" style={{ color: timeLeft <= 2 ? 'rgb(255, 0, 0)' : 'rgb(0, 0, 255)' }}>
+                <span className="text-3xl font-bold" style={{ color: `rgb(${255 - Math.round((timeLeft / TIME_LIMIT) * 255)}, 0, ${Math.round((timeLeft / TIME_LIMIT) * 255)})` }}>
                   {timeLeft}
                 </span>
               </div>

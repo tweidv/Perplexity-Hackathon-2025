@@ -197,6 +197,8 @@ function calculateScore(questions, userAnswers) {
 
     results.push({
       questionIndex: idx,
+      questionText: question.question_text,
+      options: question.options,
       userAnswer: userAnswer,
       correctAnswer: question.correct_option_index,
       isCorrect: isCorrect,
