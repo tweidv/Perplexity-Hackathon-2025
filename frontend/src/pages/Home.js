@@ -28,14 +28,10 @@ function Home() {
       <div className="flex" style={{ height: 'calc(100vh - 80px)' }}>
         {/* Left Side - Blue Container */}
         <div className="w-1/2 flex flex-col" style={{ backgroundColor: 'rgb(0, 0, 255)' }}>
-          {/* UNDERSTAND - Right aligned in blue container */}
-          <div className="flex justify-end" style={{ padding: '5px' }}>
-            <h1 className="text-6xl font-bold text-white leading-tight">UNDERSTAND</h1>
-          </div>
           
           {/* NEWS - Right aligned in blue container */}
-          <div className="flex justify-end" style={{ padding: '5px' }}>
-            <h2 className="text-8xl font-bold text-white leading-tight" style={{ marginRight: '20px' }}>NEWS</h2>
+          <div className="flex justify-end" style={{ padding: '4px' }}>
+            <h2 className="text-8xl font-bold text-white leading-tight font-archivo-black" style={{ marginRight: '20px' }}>NEWS</h2>
           </div>
 
           {/* News Cards */}
@@ -46,10 +42,10 @@ function Home() {
                 onClick={() => navigate(`/article/${article.id}`)}
                 className="bg-white rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">
                   {article.headline}
                 </h3>
-                <p className="text-gray-600 text-sm mb-2">
+                <p className="text-gray-600 text-sm mb-1">
                   {article.summary}
                 </p>
                 <div className="flex justify-between text-xs text-gray-500">
@@ -63,14 +59,10 @@ function Home() {
 
         {/* Right Side - Red Container */}
         <div className="w-1/2 flex flex-col" style={{ backgroundColor: 'rgb(255, 0, 0)' }}>
-          {/* YOUR BIAS - Left aligned in red container */}
-          <div className="flex justify-start" style={{ padding: '5px' }}>
-            <h1 className="text-6xl font-bold text-white leading-tight">YOUR BIAS</h1>
-          </div>
           
           {/* QUIZ - Left aligned in red container */}
-          <div className="flex justify-start" style={{ padding: '5px' }}>
-            <h2 className="text-8xl font-bold text-white leading-tight" style={{ marginLeft: '20px' }}>QUIZ</h2>
+          <div className="flex justify-start" style={{ padding: '4px' }}>
+            <h2 className="text-8xl font-bold text-white leading-tight font-archivo-black" style={{ marginLeft: '20px' }}>QUIZ</h2>
           </div>
 
           {/* Quiz Cards */}
@@ -81,10 +73,10 @@ function Home() {
                 onClick={() => navigate(`/quizzes/${quiz.id}`)}
                 className="bg-white rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
               >
-                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                <h3 className="text-lg font-bold text-gray-900 mb-1">
                   {quiz.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-2">
+                <p className="text-gray-600 text-sm mb-1">
                   {quiz.description}
                 </p>
                 <div className="flex justify-between text-xs text-gray-500">

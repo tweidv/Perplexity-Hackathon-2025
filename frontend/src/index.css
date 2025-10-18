@@ -24,3 +24,8 @@ code {
 .scrollbar-hide::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
 }
+
+/* Archivo Black font class */
+.font-archivo-black {
+  font-family: 'Archivo Black', sans-serif;
+}
