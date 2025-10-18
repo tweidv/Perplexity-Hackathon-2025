@@ -143,7 +143,7 @@ function QuizResults() {
           {/* Progress Bar */}
           <div className="bg-gray-200 rounded-full h-4 mb-8">
             <div
-              className="bg-gradient-to-r from-blue-600 to-green-600 h-4 rounded-full transition-all duration-1000"
+              className="bg-green-600 h-4 rounded-full transition-all duration-1000"
               style={{ width: `${result.percentage}%` }}
             ></div>
           </div>
