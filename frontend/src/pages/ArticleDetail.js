@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import ReactMarkdown from 'react-markdown';
 import CoverageMeter from '../components/CoverageMeter';
 import { getArticle } from '../services/newsApi';
@@ -59,7 +60,10 @@ function ArticleDetail() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-20">
+      <Header currentUser={null} />
+
+      {/* Back Navigation */}
+      <div className="bg-white border-b border-gray-200 sticky top-16 z-20">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <button
             onClick={() => navigate('/news')}
@@ -68,7 +72,7 @@ function ArticleDetail() {
             <span>←</span> Back to Feed
           </button>
         </div>
-      </header>
+      </div>
 
       {/* Article Content */}
       <main className="max-w-4xl mx-auto px-6 py-8">

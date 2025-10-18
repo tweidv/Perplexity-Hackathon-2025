@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthModal from '../components/AuthModal';
-import UserProfileWidget from '../components/UserProfileWidget';
+import Header from '../components/Header';
 import { subscribeToAuthChanges } from '../services/authService';
 
 function Home() {
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(null);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   useEffect(() => {
     const unsubscribe = subscribeToAuthChanges((user) => {
@@ -36,30 +34,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">EduHub</h1>
-              <p className="text-xs text-gray-600">Learn, Quiz, Compete</p>
-            </div>
-          </div>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate('/leaderboard')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-              >
-                Leaderboard
-              </button>
-              <UserProfileWidget
-                user={currentUser}
-                onSignInClick={() => setIsAuthModalOpen(true)}
-              />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header currentUser={currentUser} showTitle={true} />
 
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-6 py-16">
@@ -186,7 +161,7 @@ function Home() {
             </button>
             {!currentUser && (
               <button
-                onClick={() => setIsAuthModalOpen(true)}
+                onClick={() => navigate('/')}
                 className="px-8 py-3 bg-white text-gray-700 font-semibold border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Sign In
@@ -210,12 +185,6 @@ function Home() {
         </div>
       </footer>
 
-      {/* Auth Modal */}
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        mode="signin"
-      />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
@@ -108,19 +109,7 @@ function QuizResults() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-4xl mx-auto px-6 py-6">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">Quiz Results</h1>
-            <button
-              onClick={() => navigate('/quizzes')}
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
-            >
-              Back to Quizzes
-            </button>
-          </div>
-        </div>
-      </header>
+      <Header currentUser={null} />
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">

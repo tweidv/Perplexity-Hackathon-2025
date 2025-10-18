@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
 
@@ -49,30 +50,7 @@ function QuizzesLanding() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Quizzes</h1>
-              <p className="mt-2 text-gray-600">Test your knowledge on trending topics</p>
-            </div>
-            <div className="flex gap-3">
-              <button
-                onClick={() => navigate('/leaderboard')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
-              >
-                Leaderboard
-              </button>
-              <button
-                onClick={() => navigate('/')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50"
-              >
-                Home
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header currentUser={null} />
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12">

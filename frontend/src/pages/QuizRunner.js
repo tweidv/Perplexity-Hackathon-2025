@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import { subscribeToAuthChanges } from '../services/authService';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
@@ -207,7 +208,10 @@ function QuizRunner() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 shadow-sm">
+      <Header currentUser={currentUser} />
+
+      {/* Quiz Progress Header */}
+      <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
@@ -234,7 +238,7 @@ function QuizRunner() {
             ></div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Quiz Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">

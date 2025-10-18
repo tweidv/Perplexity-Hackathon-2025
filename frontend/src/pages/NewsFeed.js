@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import CategoryNav from '../components/CategoryNav';
 import NewsCard from '../components/NewsCard';
 import MarketTicker from '../components/MarketTicker';
-import AuthModal from '../components/AuthModal';
-import UserProfileWidget from '../components/UserProfileWidget';
 import { getArticles, generateArticle } from '../services/newsApi';
 import { subscribeToAuthChanges } from '../services/authService';
 
@@ -17,7 +16,6 @@ function NewsFeed() {
   const [error, setError] = useState(null);
   const [topicInput, setTopicInput] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
   // Subscribe to auth state changes
   useEffect(() => {
@@ -81,34 +79,7 @@ function NewsFeed() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-20">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">
-              EduHub News
-            </h1>
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => navigate('/')}
-                className="text-sm text-gray-600 hover:text-gray-900"
-              >
-                Home
-              </button>
-              <UserProfileWidget
-                user={currentUser}
-                onSignInClick={() => setIsAuthModalOpen(true)}
-              />
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Auth Modal */}
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        mode="signin"
-      />
+      <Header currentUser={currentUser} />
 
       {/* Category Navigation */}
       <CategoryNav
