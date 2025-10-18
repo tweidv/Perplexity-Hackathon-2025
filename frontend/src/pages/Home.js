@@ -45,7 +45,7 @@ function Home() {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   {article.headline}
                 </h3>
-                <p className="text-gray-600 text-sm mb-1">
+                <p className="text-gray-600 text-sm mb-2">
                   {article.summary}
                 </p>
                 <div className="flex justify-between text-xs text-gray-500">
@@ -76,7 +76,7 @@ function Home() {
                 <h3 className="text-lg font-bold text-gray-900 mb-1">
                   {quiz.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-1">
+                <p className="text-gray-600 text-sm mb-2">
                   {quiz.description}
                 </p>
                 <div className="flex justify-between text-xs text-gray-500">
