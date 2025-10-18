@@ -98,7 +98,7 @@ function NewsFeed() {
             Research a Topic
           </h2>
           <p className="text-sm text-gray-600 mb-4">
-            Get a balanced, source-backed brief on any current event or topic
+            Get balanced briefs on current events with multiple source perspectives in ~15 seconds
           </p>
           <form onSubmit={handleGenerateArticle} className="flex gap-3">
             <input
@@ -127,9 +127,6 @@ function NewsFeed() {
               )}
             </button>
           </form>
-          <p className="text-xs text-gray-500 mt-2">
-            Powered by Perplexity AI • ~15 seconds • Multiple sources with political balance analysis
-          </p>
         </div>
 
         {/* Error Message */}
