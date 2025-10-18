@@ -34,7 +34,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Header */}
-      <Header currentUser={currentUser} showTitle={true} />
+      <Header currentUser={currentUser} />
 
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-6 py-16">
@@ -49,7 +49,7 @@ function Home() {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Stay informed with balanced news coverage and sharpen your knowledge with interactive quizzes.
-            Learn, compete, and grow with EduHub.
+            Learn, compete, and grow with REALLY?
           </p>
         </div>
 
@@ -179,7 +179,7 @@ function Home() {
               Powered by <span className="font-semibold">Perplexity AI</span> • Built for learning and growth
             </p>
             <p className="text-xs text-gray-500">
-              © 2025 EduHub. All content generated with AI assistance.
+              © 2025 REALLY? All content generated with AI assistance.
             </p>
           </div>
         </div>

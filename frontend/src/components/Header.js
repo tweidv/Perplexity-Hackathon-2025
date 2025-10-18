@@ -15,7 +15,11 @@ function Header({ currentUser, showTitle = false, title = "EduHub" }) {
             {/* Left side - Logo/Title */}
             <div className="flex items-center gap-3">
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">EduHub</h1>
+                <img 
+                  src="/really-logo.jpg" 
+                  alt="REALLY?" 
+                  className="h-8 w-auto"
+                />
                 {showTitle && (
                   <p className="text-xs text-gray-600">Learn, Quiz, Compete</p>
                 )}
