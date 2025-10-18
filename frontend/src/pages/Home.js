@@ -20,14 +20,14 @@ function Home() {
       description: 'Comprehensive, personally-curated news articles covering multiple perspectives',
       buttonText: 'Read News',
       buttonAction: () => navigate('/news'),
-      gradient: 'from-blue-500 to-indigo-600'
+      color: 'red'
     },
     {
       title: 'Quiz Yourself',
       description: 'Understand your biases and knowledge. Compete on leaderboards and share your scores.',
       buttonText: 'Take Quiz',
       buttonAction: () => navigate('/quizzes'),
-      gradient: 'from-purple-500 to-pink-600'
+      color: 'blue'
     }
   ];
 
@@ -56,7 +56,7 @@ function Home() {
               key={index}
               className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
             >
-              <div className={`h-2 bg-gradient-to-r ${feature.gradient}`}></div>
+              <div className={`h-2 ${feature.color === 'red' ? 'bg-red-600' : 'bg-blue-600'}`} style={{backgroundColor: feature.color === 'red' ? 'rgb(255, 0, 0)' : 'rgb(0, 0, 255)'}}></div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">
                   {feature.title}
@@ -66,7 +66,10 @@ function Home() {
                 </p>
                 <button
                   onClick={feature.buttonAction}
-                  className={`w-full py-3 px-6 bg-gradient-to-r ${feature.gradient} text-white font-semibold rounded-lg hover:opacity-90 transition-opacity`}
+                  className={`w-full py-3 px-6 text-white font-semibold rounded-lg transition-colors`}
+                  style={{backgroundColor: feature.color === 'red' ? 'rgb(255, 0, 0)' : 'rgb(0, 0, 255)'}}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = feature.color === 'red' ? 'rgb(200, 0, 0)' : 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = feature.color === 'red' ? 'rgb(255, 0, 0)' : 'rgb(0, 0, 255)'}
                 >
                   {feature.buttonText}
                 </button>
@@ -91,13 +94,19 @@ function Home() {
           <div className="flex gap-4 justify-center">
             <button
               onClick={() => navigate('/news')}
-              className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+              className="px-8 py-3 text-white font-semibold rounded-lg transition-colors"
+              style={{backgroundColor: 'rgb(255, 0, 0)'}}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(200, 0, 0)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(255, 0, 0)'}
             >
               Explore News
             </button>
             <button
               onClick={() => navigate('/quizzes')}
-              className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
+              className="px-8 py-3 text-white font-semibold rounded-lg transition-colors"
+              style={{backgroundColor: 'rgb(0, 0, 255)'}}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
             >
               Take a Quiz
             </button>
