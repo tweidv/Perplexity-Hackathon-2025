@@ -78,7 +78,7 @@ function Leaderboard() {
               onClick={() => setPeriod(periodKey)}
               className={`px-6 py-2 rounded-md font-medium transition-colors ${
                 period === periodKey
-                  ? 'bg-blue-600 text-white'
+                  ? 'text-white'
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
@@ -91,7 +91,7 @@ function Leaderboard() {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto" style={{ borderBottomColor: 'rgb(0, 0, 255)' }}></div>
               <p className="mt-4 text-gray-600">Loading leaderboard...</p>
             </div>
           </div>
@@ -99,8 +99,8 @@ function Leaderboard() {
 
         {/* Error State */}
         {error && !loading && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <p className="text-red-800">{error}</p>
+          <div className="border rounded-lg p-4" style={{ backgroundColor: 'rgba(255, 0, 0, 0.05)', borderColor: 'rgba(255, 0, 0, 0.2)' }}>
+            <p style={{ color: 'rgb(255, 0, 0)' }}>{error}</p>
           </div>
         )}
 
@@ -118,7 +118,10 @@ function Leaderboard() {
                 </p>
                 <button
                   onClick={() => navigate('/quizzes')}
-                  className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                  className="px-6 py-3 text-white rounded-lg"
+                  style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
                 >
                   Take a Quiz
                 </button>
@@ -217,7 +220,7 @@ function Leaderboard() {
                       <div
                         key={user.uid}
                         className={`flex items-center gap-4 p-4 hover:bg-gray-50 transition-colors ${
-                          rank <= 3 ? 'bg-blue-50/30' : ''
+                          rank <= 3 ? '' : ''
                         }`}
                       >
                         {/* Rank */}
@@ -234,7 +237,7 @@ function Leaderboard() {
                               className="w-12 h-12 rounded-full"
                             />
                           ) : (
-                            <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-bold">
+                            <div className="w-12 h-12 rounded-full text-white flex items-center justify-center text-lg font-bold" style={{ backgroundColor: 'rgb(0, 0, 255)' }}>
                               {user.displayName.charAt(0).toUpperCase()}
                             </div>
                           )}
@@ -254,7 +257,7 @@ function Leaderboard() {
 
                         {/* Points */}
                         <div className="flex-shrink-0 text-right">
-                          <div className="text-2xl font-bold text-blue-600">
+                          <div className="text-2xl font-bold" style={{ color: 'rgb(0, 0, 255)' }}>
                             {user.points}
                           </div>
                           <div className="text-xs text-gray-500">points</div>
@@ -274,12 +277,15 @@ function Leaderboard() {
             <h2 className="text-2xl font-bold mb-2">
               Want to climb the leaderboard?
             </h2>
-            <p className="text-blue-100 mb-6">
+            <p className="mb-6" style={{ color: 'rgba(0, 0, 255, 0.8)' }}>
               Take more quizzes and earn points to reach the top!
             </p>
             <button
               onClick={() => navigate('/quizzes')}
-              className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              className="px-8 py-3 bg-white font-semibold rounded-lg transition-colors"
+              style={{ color: 'rgb(0, 0, 255)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(0, 0, 255, 0.05)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
             >
               Start a Quiz
             </button>

@@ -55,11 +55,11 @@ function QuizzesLanding() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Info Banner */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-8">
-          <h2 className="text-lg font-semibold text-blue-900 mb-2">
+        <div className="border rounded-lg p-6 mb-8" style={{ backgroundColor: 'rgba(0, 0, 255, 0.05)', borderColor: 'rgba(0, 0, 255, 0.2)' }}>
+          <h2 className="text-lg font-semibold mb-2" style={{ color: 'rgb(0, 0, 255)' }}>
             How It Works
           </h2>
-          <ul className="text-sm text-blue-800 space-y-1">
+          <ul className="text-sm space-y-1" style={{ color: 'rgb(0, 0, 255)' }}>
             <li>• Choose a trending topic below</li>
             <li>• Answer 5 questions with a 5-second timer each</li>
             <li>• Earn points and climb the leaderboard</li>
@@ -71,7 +71,7 @@ function QuizzesLanding() {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto" style={{ borderBottomColor: 'rgb(0, 0, 255)' }}></div>
               <p className="mt-4 text-gray-600">Loading quizzes...</p>
             </div>
           </div>
@@ -79,8 +79,8 @@ function QuizzesLanding() {
 
         {/* Error State */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-            <p className="text-red-800">{error}</p>
+          <div className="border rounded-lg p-4" style={{ backgroundColor: 'rgba(255, 0, 0, 0.05)', borderColor: 'rgba(255, 0, 0, 0.2)' }}>
+            <p style={{ color: 'rgb(255, 0, 0)' }}>{error}</p>
           </div>
         )}
 
@@ -95,10 +95,14 @@ function QuizzesLanding() {
                 <button
                   key={topic.id}
                   onClick={() => handleTopicClick(topic)}
-                  className="group bg-white border border-gray-200 rounded-lg p-6 hover:border-blue-500 hover:shadow-lg transition-all text-left"
+                  className="group bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all text-left"
+                  onMouseEnter={(e) => e.target.style.borderColor = 'rgb(0, 0, 255)'}
+                  onMouseLeave={(e) => e.target.style.borderColor = 'rgb(209, 213, 219)'}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600">
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600"
+                        onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
+                        onMouseLeave={(e) => e.target.style.color = 'rgb(17, 24, 39)'}>
                       {topic.name}
                     </h3>
                     <span className="flex items-center gap-1 text-sm text-gray-500">
@@ -112,10 +116,11 @@ function QuizzesLanding() {
                     5 questions • 5 seconds each
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="inline-block px-3 py-1 text-xs font-medium text-blue-700 bg-blue-100 rounded-full">
+                    <span className="inline-block px-3 py-1 text-xs font-medium rounded-full"
+                          style={{ color: 'rgb(0, 0, 255)', backgroundColor: 'rgba(0, 0, 255, 0.1)' }}>
                       {topic.category}
                     </span>
-                    <span className="text-blue-600 group-hover:translate-x-1 transition-transform">
+                    <span className="group-hover:translate-x-1 transition-transform" style={{ color: 'rgb(0, 0, 255)' }}>
                       →
                     </span>
                   </div>

@@ -108,8 +108,8 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
 
           {/* Error message */}
           {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-800">{error}</p>
+            <div className="mb-4 p-3 border rounded-lg" style={{ backgroundColor: 'rgba(255, 0, 0, 0.05)', borderColor: 'rgba(255, 0, 0, 0.2)' }}>
+              <p className="text-sm" style={{ color: 'rgb(255, 0, 0)' }}>{error}</p>
             </div>
           )}
 
@@ -186,7 +186,10 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
                 <button
                   type="button"
                   onClick={() => switchMode('reset')}
-                  className="text-sm text-blue-600 hover:text-blue-700"
+                  className="text-sm"
+                  style={{ color: 'rgb(0, 0, 255)' }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
                 >
                   Forgot password?
                 </button>
@@ -197,7 +200,10 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-2.5 px-4 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              className="w-full py-2.5 px-4 text-white font-medium rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">
@@ -280,7 +286,10 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
                 Don't have an account?{' '}
                 <button
                   onClick={() => switchMode('signup')}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
+                  className="font-medium"
+                  style={{ color: 'rgb(0, 0, 255)' }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
                 >
                   Sign up
                 </button>
@@ -291,7 +300,10 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
                 Already have an account?{' '}
                 <button
                   onClick={() => switchMode('signin')}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
+                  className="font-medium"
+                  style={{ color: 'rgb(0, 0, 255)' }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
                 >
                   Sign in
                 </button>
@@ -302,7 +314,10 @@ function AuthModal({ isOpen, onClose, mode: initialMode = 'signin' }) {
                 Remember your password?{' '}
                 <button
                   onClick={() => switchMode('signin')}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
+                  className="font-medium"
+                  style={{ color: 'rgb(0, 0, 255)' }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 200)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
                 >
                   Sign in
                 </button>

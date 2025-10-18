@@ -112,7 +112,10 @@ function NewsFeed() {
             <button
               type="submit"
               disabled={generating || !topicInput.trim()}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+              className="px-6 py-2 text-white rounded-lg font-medium disabled:bg-gray-300 disabled:cursor-not-allowed"
+              style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
             >
               {generating ? (
                 <span className="flex items-center gap-2">
@@ -131,8 +134,8 @@ function NewsFeed() {
 
         {/* Error Message */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-            <p className="text-red-800 text-sm">{error}</p>
+          <div className="border rounded-lg p-4 mb-6" style={{ backgroundColor: 'rgba(255, 0, 0, 0.05)', borderColor: 'rgba(255, 0, 0, 0.2)' }}>
+            <p className="text-sm" style={{ color: 'rgb(255, 0, 0)' }}>{error}</p>
           </div>
         )}
 
@@ -140,7 +143,7 @@ function NewsFeed() {
         {loading && (
           <div className="flex items-center justify-center py-20">
             <div className="text-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto" style={{ borderBottomColor: 'rgb(0, 0, 255)' }}></div>
               <p className="mt-4 text-gray-600">Loading articles...</p>
             </div>
           </div>

@@ -8,9 +8,9 @@ function DiversityMeter({ sources }) {
   const diversityScore = Math.min(100, ((regions.length * 20) + (leanings.length * 15) + (sources.length * 8)));
 
   const getScoreColor = (score) => {
-    if (score >= 75) return 'bg-green-500';
-    if (score >= 50) return 'bg-yellow-500';
-    return 'bg-red-500';
+    if (score >= 75) return { backgroundColor: 'rgb(34, 197, 94)' };
+    if (score >= 50) return { backgroundColor: 'rgb(234, 179, 8)' };
+    return { backgroundColor: 'rgb(239, 68, 68)' };
   };
 
   return (
@@ -25,8 +25,8 @@ function DiversityMeter({ sources }) {
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2">
           <div
-            className={`h-2 rounded-full ${getScoreColor(diversityScore)}`}
-            style={{ width: `${diversityScore}%` }}
+            className="h-2 rounded-full"
+            style={{ width: `${diversityScore}%`, ...getScoreColor(diversityScore) }}
           ></div>
         </div>
       </div>
@@ -41,7 +41,8 @@ function DiversityMeter({ sources }) {
           <span className="font-medium text-gray-700">Regions:</span>
           <div className="mt-1 flex flex-wrap gap-1">
             {regions.map((region, idx) => (
-              <span key={idx} className="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs">
+              <span key={idx} className="px-2 py-0.5 rounded text-xs"
+                    style={{ backgroundColor: 'rgba(0, 0, 255, 0.1)', color: 'rgb(0, 0, 255)' }}>
                 {region}
               </span>
             ))}

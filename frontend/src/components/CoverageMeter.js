@@ -15,7 +15,8 @@ function CoverageMeter({ coverage, size = 'normal' }) {
 
       <div className="flex w-full h-2 rounded-full overflow-hidden">
         <div
-          className="bg-blue-500"
+          className=""
+          style={{ backgroundColor: 'rgb(0, 0, 255)' }}
           style={{ width: `${left}%` }}
           title={`Left: ${left}%`}
         />
@@ -25,7 +26,8 @@ function CoverageMeter({ coverage, size = 'normal' }) {
           title={`Center: ${center}%`}
         />
         <div
-          className="bg-red-500"
+          className=""
+          style={{ backgroundColor: 'rgb(255, 0, 0)' }}
           style={{ width: `${right}%` }}
           title={`Right: ${right}%`}
         />
@@ -34,7 +36,7 @@ function CoverageMeter({ coverage, size = 'normal' }) {
       {!isSmall && (
         <div className="flex justify-between text-xs text-gray-500">
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-blue-500"></span>
+            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(0, 0, 255)' }}></span>
             Left {left}%
           </span>
           <span className="flex items-center gap-1">
@@ -42,7 +44,7 @@ function CoverageMeter({ coverage, size = 'normal' }) {
             Center {center}%
           </span>
           <span className="flex items-center gap-1">
-            <span className="w-3 h-3 rounded-full bg-red-500"></span>
+            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: 'rgb(255, 0, 0)' }}></span>
             Right {right}%
           </span>
         </div>

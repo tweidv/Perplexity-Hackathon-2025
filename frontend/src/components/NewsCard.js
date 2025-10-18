@@ -31,7 +31,8 @@ function NewsCard({ article, onClick }) {
             {article.categories.slice(0, 2).map((cat, idx) => (
               <span
                 key={idx}
-                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded"
+                className="px-2 py-1 text-xs font-medium rounded"
+                style={{ backgroundColor: 'rgba(0, 0, 255, 0.1)', color: 'rgb(0, 0, 255)' }}
               >
                 {cat}
               </span>
@@ -40,7 +41,9 @@ function NewsCard({ article, onClick }) {
         )}
 
         {/* Title */}
-        <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 transition-colors hover:text-blue-600"
+            onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
+            onMouseLeave={(e) => e.target.style.color = 'rgb(17, 24, 39)'}>
           {article.title}
         </h3>
 

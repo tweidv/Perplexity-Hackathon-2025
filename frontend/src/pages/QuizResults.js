@@ -76,7 +76,7 @@ function QuizResults() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto" style={{ borderBottomColor: 'rgb(0, 0, 255)' }}></div>
           <p className="mt-4 text-gray-600">Loading results...</p>
         </div>
       </div>
@@ -88,12 +88,15 @@ function QuizResults() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-md">
           <div className="text-center">
-            <div className="text-red-500 text-5xl mb-4">⚠️</div>
+            <div className="text-5xl mb-4" style={{ color: 'rgb(255, 0, 0)' }}>⚠️</div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Error</h2>
             <p className="text-gray-600 mb-6">{error || 'Results not found'}</p>
             <button
               onClick={() => navigate('/quizzes')}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-6 py-2 text-white rounded-lg"
+              style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
             >
               Back to Quizzes
             </button>
@@ -124,7 +127,7 @@ function QuizResults() {
           {/* Score Display */}
           <div className="flex items-center justify-center gap-8 mb-8">
             <div className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">
+              <div className="text-5xl font-bold mb-2" style={{ color: 'rgb(0, 0, 255)' }}>
                 {result.score}/{result.total}
               </div>
               <div className="text-sm text-gray-600">Correct Answers</div>
@@ -153,7 +156,10 @@ function QuizResults() {
             <div className="flex items-center justify-center gap-3">
               <button
                 onClick={() => handleShare('twitter')}
-                className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 text-white rounded-lg transition-colors"
+                style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
@@ -192,12 +198,12 @@ function QuizResults() {
               <div
                 key={index}
                 className={`p-6 rounded-lg border-2 ${
-                  item.isCorrect ? 'border-green-200 bg-green-50' : 'border-red-200 bg-red-50'
+                  item.isCorrect ? 'border-green-200' : 'border-red-200'
                 }`}
               >
                 <div className="flex items-start gap-3 mb-3">
                   <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
-                    item.isCorrect ? 'bg-green-500 text-white' : 'bg-red-500 text-white'
+                    item.isCorrect ? 'text-white' : 'text-white'
                   }`}>
                     {item.isCorrect ? '✓' : '✗'}
                   </div>
@@ -245,7 +251,10 @@ function QuizResults() {
                         href={source.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 hover:underline text-sm"
+                        className="hover:underline text-sm"
+                        style={{ color: 'rgb(0, 0, 255)' }}
+                        onMouseEnter={(e) => e.target.style.color = 'rgb(0, 0, 200)'}
+                        onMouseLeave={(e) => e.target.style.color = 'rgb(0, 0, 255)'}
                       >
                         {idx + 1}. {source.title || source.url}
                       </a>
@@ -261,7 +270,10 @@ function QuizResults() {
         <div className="flex gap-4 justify-center">
           <button
             onClick={() => navigate('/quizzes')}
-            className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            className="px-8 py-3 text-white font-medium rounded-lg transition-colors"
+            style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
           >
             Take Another Quiz
           </button>

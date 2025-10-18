@@ -30,21 +30,27 @@ function Header({ currentUser, showTitle = false, title = "EduHub" }) {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => navigate('/')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors uppercase"
               >
                 Home
               </button>
               <button
-                onClick={() => navigate('/leaderboard')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                onClick={() => navigate('/news')}
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors uppercase"
               >
-                Leaderboard
+                News
               </button>
               <button
                 onClick={() => navigate('/quizzes')}
-                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors uppercase"
               >
                 Take Quiz
+              </button>
+              <button
+                onClick={() => navigate('/leaderboard')}
+                className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors uppercase"
+              >
+                Leaderboard
               </button>
               <UserProfileWidget
                 user={currentUser}

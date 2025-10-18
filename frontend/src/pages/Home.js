@@ -44,7 +44,7 @@ function Home() {
               <div
                 key={article.id}
                 onClick={() => navigate(`/article/${article.id}`)}
-                className="bg-white rounded-lg border-2 border-blue-200 p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {article.headline}
@@ -68,9 +68,9 @@ function Home() {
             <h1 className="text-6xl font-bold text-white leading-tight">YOUR BIAS</h1>
           </div>
           
-          {/* QUIZZES - Left aligned in red container */}
+          {/* QUIZ - Left aligned in red container */}
           <div className="flex justify-start" style={{ padding: '5px' }}>
-            <h2 className="text-8xl font-bold text-white leading-tight" style={{ marginLeft: '20px' }}>QUIZZES</h2>
+            <h2 className="text-8xl font-bold text-white leading-tight" style={{ marginLeft: '20px' }}>QUIZ</h2>
           </div>
 
           {/* Quiz Cards */}
@@ -79,7 +79,7 @@ function Home() {
               <div
                 key={quiz.id}
                 onClick={() => navigate(`/quizzes/${quiz.id}`)}
-                className="bg-white rounded-lg border-2 border-red-200 p-4 cursor-pointer hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg p-4 cursor-pointer hover:shadow-lg transition-shadow"
               >
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {quiz.title}

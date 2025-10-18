@@ -175,7 +175,7 @@ function QuizRunner() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto" style={{ borderBottomColor: 'rgb(0, 0, 255)' }}></div>
           <p className="mt-4 text-gray-600">Loading quiz...</p>
         </div>
       </div>
@@ -187,12 +187,15 @@ function QuizRunner() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-md">
           <div className="text-center">
-            <div className="text-red-500 text-5xl mb-4">⚠️</div>
+            <div className="text-5xl mb-4" style={{ color: 'rgb(255, 0, 0)' }}>⚠️</div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Error</h2>
             <p className="text-gray-600 mb-6">{error}</p>
             <button
               onClick={() => navigate('/quizzes')}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              className="px-6 py-2 text-white rounded-lg"
+              style={{ backgroundColor: 'rgb(0, 0, 255)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 200)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'rgb(0, 0, 255)'}
             >
               Back to Quizzes
             </button>
@@ -233,7 +236,8 @@ function QuizRunner() {
           {/* Progress bar */}
           <div className="mt-4 bg-gray-200 rounded-full h-2">
             <div
-              className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+              className="h-2 rounded-full transition-all duration-300"
+              style={{ backgroundColor: 'rgb(0, 0, 255)' }}
               style={{ width: `${progress}%` }}
             ></div>
           </div>
@@ -268,7 +272,7 @@ function QuizRunner() {
                 />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className={`text-3xl font-bold ${timeLeft <= 2 ? 'text-red-500' : 'text-blue-600'}`}>
+                <span className="text-3xl font-bold" style={{ color: timeLeft <= 2 ? 'rgb(255, 0, 0)' : 'rgb(0, 0, 255)' }}>
                   {timeLeft}
                 </span>
               </div>
@@ -298,19 +302,19 @@ function QuizRunner() {
                   disabled={isDisabled}
                   className={`w-full p-4 text-left rounded-xl border-2 transition-all ${
                     isSelected
-                      ? 'border-blue-600 bg-blue-50 scale-105'
-                      : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
+                      ? 'scale-105'
+                      : 'border-gray-200 hover:bg-gray-50'
                   } ${isDisabled && !isSelected ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
                       isSelected
-                        ? 'bg-blue-600 text-white'
+                        ? 'text-white'
                         : 'bg-gray-100 text-gray-600'
                     }`}>
                       {String.fromCharCode(65 + index)}
                     </div>
-                    <span className={`text-lg ${isSelected ? 'text-blue-900 font-medium' : 'text-gray-700'}`}>
+                    <span className={`text-lg ${isSelected ? 'font-medium' : ''}`} style={{ color: isSelected ? 'rgb(0, 0, 255)' : 'rgb(55, 65, 81)' }}>
                       {option}
                     </span>
                   </div>
