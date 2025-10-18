@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
+import CoverageMeter from '../components/CoverageMeter';
 import { subscribeToAuthChanges } from '../services/authService';
 import { mockStories, mockQuizzes } from '../mockData';
 
@@ -48,6 +49,13 @@ function Home() {
                 <p className="text-gray-600 text-sm mb-2">
                   {article.summary}
                 </p>
+                {/* Bias Indicator */}
+                {article.politicalBalance && (
+                  <div className="mb-3">
+                    <CoverageMeter coverage={article.politicalBalance} size="small" />
+                  </div>
+                )}
+                
                 <div className="flex justify-between text-xs text-gray-500">
                   <span>{article.category}</span>
                   <span>{article.readTime}</span>
