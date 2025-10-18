@@ -17,14 +17,14 @@ function Home() {
   const features = [
     {
       title: 'Balanced News',
-      description: 'Get comprehensive, AI-curated news articles covering multiple perspectives on trending topics',
+      description: 'Comprehensive, personally-curated news articles covering multiple perspectives',
       buttonText: 'Read News',
       buttonAction: () => navigate('/news'),
       gradient: 'from-blue-500 to-indigo-600'
     },
     {
-      title: 'Knowledge Quizzes',
-      description: 'Test your knowledge with AI-generated quizzes, compete on leaderboards, and share your scores',
+      title: 'Quiz Yourself',
+      description: 'Understand your biases and knowledge. Compete on leaderboards and share your scores.',
       buttonText: 'Take Quiz',
       buttonAction: () => navigate('/quizzes'),
       gradient: 'from-purple-500 to-pink-600'
@@ -45,12 +45,8 @@ function Home() {
             </span>
           </div>
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            Your AI-Powered Learning Hub
+            Understand Your Biases
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Stay informed with balanced news coverage and sharpen your knowledge with interactive quizzes.
-            Learn, compete, and grow with REALLY?
-          </p>
         </div>
 
         {/* Feature Cards */}
@@ -79,60 +75,6 @@ function Home() {
           ))}
         </div>
 
-        {/* Stats Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Why Choose EduHub?
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
-              <div className="text-gray-600">AI-Generated Content</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">10+</div>
-              <div className="text-gray-600">Quiz Topics</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-pink-600 mb-2">24/7</div>
-              <div className="text-gray-600">Always Updated</div>
-            </div>
-          </div>
-        </div>
-
-        {/* How It Works */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-center">How It Works</h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">
-                1
-              </div>
-              <h4 className="font-semibold mb-2">Choose Your Topic</h4>
-              <p className="text-blue-100 text-sm">
-                Browse trending topics in news or quizzes
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">
-                2
-              </div>
-              <h4 className="font-semibold mb-2">Learn & Engage</h4>
-              <p className="text-blue-100 text-sm">
-                Read balanced articles or take timed quizzes
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-3">
-                3
-              </div>
-              <h4 className="font-semibold mb-2">Track Progress</h4>
-              <p className="text-blue-100 text-sm">
-                Earn points, climb leaderboards, share achievements
-              </p>
-            </div>
-          </div>
-        </div>
 
         {/* CTA Section */}
         <div className="text-center">
